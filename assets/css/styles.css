@@ -1,0 +1,490 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Beiruti:wght@200..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    --bg-color-dark: #272727;
+    --bg-color-light: #F9F6EE;
+    --text-color-dark: #ffffff;
+    --text-color-light: #272727;
+    
+    height: 100vh;
+    color: var(--text-color-dark);
+    overflow: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/*
+
+Light and Dark themes
+
+ */
+
+:root.dark .themes {
+    filter: invert(1); 
+}
+
+:root.light .themes {
+    filter: invert(0);
+}
+
+:root.dark .input-wrapper button {
+    filter: invert(1);
+}
+
+:root.light .form-container,
+:root.light .form-container input{
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    animation: fadeIn 1.5s ease-in;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:root.dark .form-container,
+:root.dark .form-container input{
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+    animation: fadeIn 1.5s ease-in;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.theme-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+.themes {
+    margin: 50%;
+    filter: invert(1);
+    box-shadow: none;
+}
+
+button, .themes{
+    border-style: hidden;
+    background-color: transparent;
+    transition: transform 0.3s ease;
+}
+
+.themes:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* 
+
+Containers
+
+*/
+
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 1.7fr;
+    grid-auto-rows: repeat(2, 1fr);
+    height: 100vh;
+    background: linear-gradient(135deg, #100e09, #d4b6b1);
+    overflow: hidden;
+}
+
+
+h1{
+    text-align: center;
+    font-family: Rajdhani;
+    font-weight: 400;
+    letter-spacing: 5px;
+    font-size: 2.1em;
+    margin-top: 8%;
+    color:var(--bg-color-light);
+    text-shadow: 0 0 0 #bbb;
+    margin-bottom: 0;
+    transition: font-size 0.9s ease;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    padding-top: 10%;
+    animation: moveUp 2s ease-in-out forwards, fadeIn 4s ease-in;
+    line-height: 200%;
+}
+
+h1:hover {
+    font-size: 2em;
+}
+
+h1 u{
+    text-decoration: underline;
+    text-decoration-thickness: 0.5px;
+    text-decoration-style: solid;
+    text-underline-offset: 10px;
+}
+
+
+h2 {
+    font-family: Rajdhani;
+    font-weight: 400;
+    color:var(--bg-color-light);
+    text-align: center;
+    transition: font-size 0.9s ease;
+    padding-top: 5%;
+    animation: moveUp 2s ease-in-out forwards, fadeIn 5s ease-in;
+}
+
+h2:hover {
+    font-size: 1.4em;
+}
+
+
+
+/* 
+
+SARIF LOGO
+
+*/
+
+.sarif-logo{
+    grid-column-start: 1;
+    grid-row-start: 2;
+    perspective: 1000px;
+    animation: fadeIn 4s ease-in;
+    max-width: 80%;
+    height: auto;
+    justify-self: center;
+    align-self: center;
+    padding-bottom: 5%; 
+    max-width: fit-content;
+    animation: moveUp 2s ease-in-out forwards;
+}
+
+.sarif-logo::before {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    width: 400px;
+    height: 25px;
+    background: rgba(0, 0, 0, 0.3);
+    filter: blur(20px);
+    transform: translateY(10px);
+    border-radius: 50%;
+}
+
+.spin3d {
+    animation: spin 8s infinite linear;
+    transform-style: preserve-3d;
+    align-content: center;
+}
+
+
+
+/* 
+
+INPUT FORM
+
+*/
+
+
+.form-container {
+    display: grid;
+    background-color: var(--bg-color-dark);
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    transition: background-color 0.3s ease;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    animation: moveToLeft 3s ease-in-out forwards;
+}
+
+
+
+.inputs-form{
+    display: grid;
+    grid-template-columns: repeat(2, 30%);
+    grid-template-rows: repeat(6, 10%);
+    justify-content: center;
+    align-content: center;
+    gap: 1rem;
+}
+
+.inputs-form > h3, h4{
+    font-family: Beiruti;
+    animation: fadeIn 5s ease-in;
+}
+
+h3 {
+    font-weight: 200;
+    font-size: 2em;
+    text-align: center;
+    grid-column-start: 1;  
+    grid-column-end: 2;
+    grid-column: 1 / span 2;
+    align-self: end;
+    text-shadow: 0% 0% 1px rgba(0, 0, 0, 0.5);
+}
+
+h4 {
+    font-weight: 200;
+    font-size: 2.7em;
+    grid-column: 1 / span 2;
+    text-align: center;
+    align-self: center;
+    text-shadow: 0% 0% 1px rgba(0, 0, 0, 0.5);
+}
+
+.inputs-form > div {
+    font-family: Rajdhani;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.inputs-form > div:nth-child(odd) {
+    justify-self: center;
+    align-self: center;
+}
+
+.inputs-form > div:nth-child(even) {
+    justify-self: center;
+    align-self: center;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+input{
+    text-align: center;
+    font-size: 1.3em;
+    box-sizing: border-box;
+    width: 80%;
+    height: 40%;
+    border-style: hidden;
+    border-bottom: 1px solid;
+    outline: none;
+    padding: 0 10px;
+}
+
+input:invalid {
+    position: relative;
+    top: 0;
+}
+
+input:focus {
+    border-bottom: 1px solid #d9b447; 
+    border-right: 4px solid #c5b358;
+    border-radius: 1px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+.input-wrapper .text-box {
+    background-color: #c5b358;
+    position: absolute;
+    bottom: 12px;
+    right: 60px; 
+    transform: translateY(50%) scale(0.9);
+    padding: 0 5px;
+    border: 1px solid #ccc;
+    color: var(--bg-color-dark);
+    pointer-events: none; 
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0;
+    border-style: none;
+    outline: none;
+    border-radius: 1px;
+}
+
+.input-wrapper input:focus + .text-box {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+    background-color: #c5b358;
+    color: var(--bg-color-dark);
+    letter-spacing: 1px;
+    font-weight: 400;
+    border-style: none;
+    outline: none;
+    border-radius: 1px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+    text-align: right;
+    transition: ease 0.5s;
+    text-align: right;
+
+}
+
+.confirm-button {
+    font-family: Rajdhani;
+    font-weight: 400;
+    letter-spacing: 4px;
+    align-self: center;
+    justify-self: center;
+    width: 80%;
+    height: 30%;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, transparent 10px, #c5b358 0);
+}
+
+.confirm-button:hover {
+    
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+.input-wrapper button {
+    position: absolute;
+    left: -10%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+    z-index: 1;
+}
+
+/* 
+
+KEYFRAMES
+
+*/
+
+
+@keyframes fadeIn {
+    from {opacity: 0; }
+    to {opacity: 1; }
+}
+
+@keyframes moveToLeft{
+    from {transform: translateX(3%); }
+    to {transform: translateX(0); }
+}
+
+@keyframes moveUp {
+    from {
+        transform: translateY(10%)
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes spin {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+
+/* 
+MEDIA QUERIES 
+*/
+
+
+@media only screen and (max-width: 1024px) {
+    .main-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: repeat(2, 1fr);
+        height: 100vh;
+        background: linear-gradient(135deg, #100e09, #d4b6b1);
+        overflow: scroll;
+    }
+
+    .sarif-logo {
+        grid-column-start: 1;
+        grid-row-start: 2;
+        padding-top: 10%;
+        padding-bottom: 30%;
+    }
+
+
+    .form-container {
+        padding-top: 12%;
+        grid-column-start: 1;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        grid-template-columns: 1fr;
+        grid-template-rows: 5px 1fr;
+        height: 100vh;
+    }
+
+
+    .theme-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-column-start: 1;
+        grid-row-start: 1;
+    }
+
+    .themes {
+        margin: 10%;
+    }
+
+
+    .inputs-form{
+        display: grid;
+        grid-template-columns: repeat(2, 40%);
+        grid-template-rows: repeat(6, 10%);
+        justify-content: center;
+        align-content: center;
+        gap: 1%;
+    }
+}
+
+
+@media only screen and (max-width: 425px){
+
+    h1{ 
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1em;;
+    }
+
+    .sarif-logo {
+        max-width: 50%;
+        justify-self: center;
+    }
+    .spin3d {
+        width: 100%;
+        
+    }
+    .inputs-form {
+        font-size: 0.8=7em;
+    }
+}
+
+@media only screen and (max-width: 375px){
+    h1{ 
+        font-size: 0.7em;
+    }
+
+    h2 {
+        font-size: 0.7em;
+        letter-spacing: 2px;
+    }
+
+    .sarif-logo {
+        max-width: 50%;
+        justify-self: center;
+    }
+    .spin3d {
+        width: 100%;
+        
+    }
+    .inputs-form {
+        font-size: 0.7em;
+        gap: 0;
+    }
+}

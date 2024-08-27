@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up Page</title>
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="icon" href="./assets/images/Sarif.svg" type="image/svg">
+    <script src="./assets/js/script.js" defer></script>
+</head>
+<body>
+    <main class="main-container">
+        <header>
+            <h1>The World's Leading Developer of <u></br>&nbsp Augmentative Technology &nbsp</u></h1>
+            <h2>A stronger, faster, smarter, better you.</h2>
+        </header>
+        
+        <div class="sarif-logo">
+            <a href="https://www.youtube.com/watch?v=jdERgfgB9Yc" alt="Opens Youtube"><img class="spin3d" src="./assets/images/Sarif.svg" alt=""></a>
+        </div>
+        
+        <div class="form-container">
+            <div class="theme-container">
+                <button alt="" class=themes><img src="./assets/images/yield.png" class="themeIcon"  alt="" width="20" height="20"></button>
+            </div>
+            
+            <form class="inputs-form" action="" method="" autocomplete="off">
+                <h3 class="form-header">Human Advancement towards a better future</h3>
+                <h4 class="sign-up">Sign-up Today</h4>
+
+                <div class="input-wrapper">
+                    <label for="first_name"></label>
+                    <input type="text" id="first_name" name="first_name" placeholder="*First Name" required>
+                    <span class="text-box">First Name</span>
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="last_name"></label>
+                    <input type="text" id="last_name" name="last_name" placeholder="*Last Name" required>
+                    <span class="text-box">Last Name</span>
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="email"></label>
+                    <input type="email" id="email" name="email" placeholder="*Email" required>
+                    <span class="text-box">Email</span>
+                </div>
+
+                <div class="input-wrapper">
+                    <span id="error-message" style="color: red;"></span>
+                    <label for="number"></label>
+                    <input type="tel" id="number" name="phone" pattern="(\+?\d{1,4}[\s-]?)?(\(?\d{1,4}\)?[\s-]?)?\d{1,4}[\s-]?\d{1,4}[\s-]?\d{0,9}" placeholder="*Phone" required>
+                    <span class="text-box">Phone</span>
+                    
+                </div>
+
+                <div class="input-wrapper">
+                    <button type="button" id="toggle-password" aria-label="show password"><img src="./assets/images/eyebrow.png" alt="" width="20" height="20"></button>
+                    <input type="password" id="password" name="password" placeholder="*Password" required>
+                    <span class="text-box">Password</span>
+                </div>
+
+                <div class="input-wrapper">
+                    <span id="psw-error-message" style="color: red;"></span>
+                    <input type="password" id="confirm_password" name="confirm_password" placeholder="*Confirm Password" required>
+                    <span class="text-box">Confirm Password</span>
+                </div>
+
+                <button class="confirm-button">Confirm</button>
+            </form>
+        </div>
+    </main>
+    
+</body>
+</html>
+
+
+
+
+
