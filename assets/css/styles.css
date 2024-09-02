@@ -268,10 +268,6 @@ input{
     padding: 0 10px;
 }
 
-input:invalid {
-    position: relative;
-    top: 0;
-}
 
 input:focus {
     border-bottom: 1px solid #d9b447; 
@@ -396,7 +392,7 @@ MEDIA QUERIES
         grid-auto-rows: repeat(2, 1fr);
         height: 100vh;
         background: linear-gradient(135deg, #100e09, #d4b6b1);
-        overflow: scroll;
+        overflow-y: scroll;
     }
 
     .sarif-logo {
@@ -439,6 +435,13 @@ MEDIA QUERIES
         align-content: center;
         gap: 1%;
     }
+
+    .input-wrapper .text-box {
+        position: absolute;
+        font-size: 1m;
+        bottom: 0;
+        right: 60px;
+    }
 }
 
 
@@ -463,6 +466,12 @@ MEDIA QUERIES
     .inputs-form {
         font-size: 0.8=7em;
     }
+
+    .input-wrapper .text-box {
+        font-size: 0.8em;
+        bottom: 5px;
+        right: 40px;
+    }
 }
 
 @media only screen and (max-width: 375px){
@@ -486,5 +495,11 @@ MEDIA QUERIES
     .inputs-form {
         font-size: 0.7em;
         gap: 0;
+    }
+
+    .input-wrapper .text-box {
+        font-size: 1em;
+        bottom: 8px;
+        right: 20px;
     }
 }
